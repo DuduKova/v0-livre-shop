@@ -3,8 +3,10 @@
 import { useState } from "react"
 import { Send } from "lucide-react"
 import { Spinner } from "@/components/ui/spinner"
+import { useLanguage } from "@/context/LanguageContext"
 
 export function ContactSection() {
+  const { t } = useLanguage()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
 
@@ -12,11 +14,34 @@ export function ContactSection() {
     e.preventDefault()
     setIsSubmitting(true)
     
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-    
-    setIsSubmitting(false)
-    setIsSubmitted(true)
+    try {
+      const formData = new FormData(e.currentTarget)
+      const data = {
+        name: formData.get("name"),
+        email: formData.get("email"),
+        phone: formData.get("phone"),
+        message: formData.get("message"),
+      }
+
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+
+      if (!response.ok) {
+        throw new Error("Failed to submit")
+      }
+
+      setIsSubmitted(true)
+    } catch (error) {
+      console.error("Error submitting form:", error)
+      // In a real app we might show a toast error here
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -25,16 +50,17 @@ export function ContactSection() {
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12">
             <p className="text-primary tracking-[0.4em] text-xs uppercase mb-6">
-              Contacto
+              {t.contact.tag}
             </p>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-foreground mb-8 text-balance">
-              Hablemos
+              {t.contact.title}
             </h2>
             <div className="w-16 h-px bg-primary mx-auto mb-8" />
-            <p className="text-muted-foreground">
-              Estamos aqui para responder tus preguntas y crear experiencias 
-              de chocolate inolvidables para ti.
-            </p>
+            <div className="text-muted-foreground space-y-2">
+              <p>{t.contact.desc}</p>
+              <p>{t.contact.desc2}</p>
+              <p>{t.contact.desc3}</p>
+            </div>
           </div>
 
           {isSubmitted ? (
@@ -43,10 +69,10 @@ export function ContactSection() {
                 <Send className="w-6 h-6 text-primary" />
               </div>
               <h3 className="font-serif text-2xl text-foreground mb-4">
-                Mensaje Enviado
+                {t.contact.form.successTitle}
               </h3>
               <p className="text-muted-foreground">
-                Gracias por contactarnos. Te responderemos pronto.
+                {t.contact.form.successDesc}
               </p>
             </div>
           ) : (
@@ -57,7 +83,7 @@ export function ContactSection() {
                     htmlFor="name"
                     className="block text-sm text-muted-foreground mb-2 tracking-wide"
                   >
-                    Nombre y Apellido
+                    {t.contact.form.name}
                   </label>
                   <input
                     type="text"
@@ -65,7 +91,7 @@ export function ContactSection() {
                     name="name"
                     required
                     className="w-full px-4 py-3 bg-input border border-border text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary transition-colors duration-300"
-                    placeholder="Tu nombre completo"
+                    placeholder={t.contact.form.namePlaceholder}
                   />
                 </div>
                 <div>
@@ -73,7 +99,7 @@ export function ContactSection() {
                     htmlFor="email"
                     className="block text-sm text-muted-foreground mb-2 tracking-wide"
                   >
-                    Email
+                    {t.contact.form.email}
                   </label>
                   <input
                     type="email"
@@ -81,7 +107,7 @@ export function ContactSection() {
                     name="email"
                     required
                     className="w-full px-4 py-3 bg-input border border-border text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary transition-colors duration-300"
-                    placeholder="tu@email.com"
+                    placeholder={t.contact.form.emailPlaceholder}
                   />
                 </div>
               </div>
@@ -91,14 +117,14 @@ export function ContactSection() {
                   htmlFor="phone"
                   className="block text-sm text-muted-foreground mb-2 tracking-wide"
                 >
-                  Telefono
+                  {t.contact.form.phone}
                 </label>
                 <input
                   type="tel"
                   id="phone"
                   name="phone"
                   className="w-full px-4 py-3 bg-input border border-border text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary transition-colors duration-300"
-                  placeholder="+51 999 999 999"
+                  placeholder={t.contact.form.phonePlaceholder}
                 />
               </div>
 
@@ -107,7 +133,7 @@ export function ContactSection() {
                   htmlFor="message"
                   className="block text-sm text-muted-foreground mb-2 tracking-wide"
                 >
-                  Mensaje
+                  {t.contact.form.message}
                 </label>
                 <textarea
                   id="message"
@@ -115,7 +141,7 @@ export function ContactSection() {
                   rows={5}
                   required
                   className="w-full px-4 py-3 bg-input border border-border text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary transition-colors duration-300 resize-none"
-                  placeholder="Cuentanos como podemos ayudarte..."
+                  placeholder={t.contact.form.messagePlaceholder}
                 />
               </div>
 
@@ -127,11 +153,11 @@ export function ContactSection() {
                 {isSubmitting ? (
                   <>
                     <Spinner className="w-5 h-5" />
-                    Enviando...
+                    {t.contact.form.submitting}
                   </>
                 ) : (
                   <>
-                    Enviar Mensaje
+                    {t.contact.form.submit}
                     <Send className="w-4 h-4" />
                   </>
                 )}

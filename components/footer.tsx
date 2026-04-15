@@ -1,8 +1,12 @@
+"use client"
+
 import Link from "next/link"
 import { MapPin, Phone } from "lucide-react"
+import { useLanguage } from "@/context/LanguageContext"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
+  const { t } = useLanguage()
 
   return (
     <footer className="bg-secondary border-t border-border">
@@ -14,20 +18,20 @@ export function Footer() {
               <span className="font-serif text-3xl tracking-wide text-primary">LIVRE</span>
             </Link>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Chocolate artesanal premium desde el corazon del Valle Sagrado del Peru.
+              {t.footer.desc}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-serif text-lg text-foreground mb-6">Navegacion</h4>
+            <h4 className="font-serif text-lg text-foreground mb-6">{t.footer.navTitle}</h4>
             <ul className="space-y-3">
               <li>
                 <Link
                   href="#nuestra-historia"
                   className="text-muted-foreground hover:text-primary transition-colors duration-300"
                 >
-                  Nuestra Historia
+                  {t.nav.story}
                 </Link>
               </li>
               <li>
@@ -35,15 +39,7 @@ export function Footer() {
                   href="#productos"
                   className="text-muted-foreground hover:text-primary transition-colors duration-300"
                 >
-                  Productos
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#valores"
-                  className="text-muted-foreground hover:text-primary transition-colors duration-300"
-                >
-                  Valores
+                  {t.nav.products}
                 </Link>
               </li>
               <li>
@@ -51,7 +47,7 @@ export function Footer() {
                   href="#contacto"
                   className="text-muted-foreground hover:text-primary transition-colors duration-300"
                 >
-                  Contacto
+                  {t.nav.contact}
                 </Link>
               </li>
             </ul>
@@ -59,13 +55,12 @@ export function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-serif text-lg text-foreground mb-6">Contacto</h4>
+            <h4 className="font-serif text-lg text-foreground mb-6">{t.footer.contactTitle}</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <span className="text-muted-foreground">
-                  Tarabamba, Valle Sagrado<br />
-                  Cusco, Peru
+                  {t.footer.location}
                 </span>
               </li>
               <li>
@@ -103,10 +98,10 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-muted-foreground text-sm">
-            {currentYear} Livre Premium Chocolate. Todos los derechos reservados.
+            {currentYear} {t.footer.rights}
           </p>
           <p className="text-muted-foreground text-sm">
-            Hecho con amor en el Valle Sagrado
+            {t.footer.madeWithLove}
           </p>
         </div>
       </div>

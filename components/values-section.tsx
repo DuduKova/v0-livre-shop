@@ -1,45 +1,51 @@
-import { Leaf, Heart, Award, Sparkles } from "lucide-react"
+"use client"
 
-const values = [
-  {
-    icon: Heart,
-    title: "Comercio Directo",
-    description:
-      "Trabajamos directamente con agricultores locales, garantizando precios justos y relaciones sostenibles que benefician a las comunidades del Valle Sagrado.",
-  },
-  {
-    icon: Award,
-    title: "Cacao Fino Peruano",
-    description:
-      "Utilizamos exclusivamente cacao fino de aroma, reconocido mundialmente por su complejidad aromatica y notas frutales unicas.",
-  },
-]
+import { Leaf, Heart, Award, Sparkles } from "lucide-react"
+import { useLanguage } from "@/context/LanguageContext"
 
 const superfoods = [
   {
     name: "Quinoa",
-    description: "Grano ancestral de los Andes",
+    descriptionEs: "Grano ancestral de los Andes",
+    descriptionEn: "Ancestral grain of the Andes",
   },
   {
     name: "Lucuma",
-    description: "El oro de los Incas",
+    descriptionEs: "El oro de los Incas",
+    descriptionEn: "The gold of the Incas",
   },
   {
     name: "Camu Camu",
-    description: "Superfrutas de la Amazonia",
+    descriptionEs: "Superfrutas de la Amazonia",
+    descriptionEn: "Amazonian superfruits",
   },
 ]
 
 export function ValuesSection() {
+  const { t, language } = useLanguage()
+
+  const values = [
+    {
+      icon: Heart,
+      title: t.values.directTrade.title,
+      description: t.values.directTrade.desc,
+    },
+    {
+      icon: Award,
+      title: t.values.beanToBar.title,
+      description: t.values.beanToBar.desc,
+    },
+  ]
+
   return (
     <section id="valores" className="py-24 md:py-32 bg-secondary">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center mb-16">
           <p className="text-primary tracking-[0.4em] text-xs uppercase mb-6">
-            Nuestros Valores
+            {t.values.tag}
           </p>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-foreground mb-8 text-balance">
-            Compromiso con la excelencia
+            {t.values.title}
           </h2>
           <div className="w-16 h-px bg-primary mx-auto" />
         </div>
@@ -69,13 +75,12 @@ export function ValuesSection() {
             <div className="inline-flex items-center gap-2 mb-4">
               <Sparkles className="w-5 h-5 text-primary" />
               <span className="text-primary tracking-[0.3em] text-xs uppercase">
-                Superalimentos Peruanos
+                {t.values.superfoods.tag}
               </span>
               <Sparkles className="w-5 h-5 text-primary" />
             </div>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Fusionamos el cacao con los tesoros nutricionales del Peru, 
-              creando sabores unicos con beneficios extraordinarios.
+              {t.values.superfoods.desc}
             </p>
           </div>
 
@@ -89,7 +94,9 @@ export function ValuesSection() {
                 <h4 className="font-serif text-lg text-foreground mb-2">
                   {food.name}
                 </h4>
-                <p className="text-muted-foreground text-sm">{food.description}</p>
+                <p className="text-muted-foreground text-sm">
+                  {language === 'es' ? food.descriptionEs : food.descriptionEn}
+                </p>
               </div>
             ))}
           </div>
