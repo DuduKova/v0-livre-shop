@@ -1,18 +1,20 @@
 import { defineConfig } from 'sanity'
+import { structureTool } from 'sanity/structure'
 import { schemaTypes } from './schemas'
 import { esESLocale } from '@sanity/locale-es-es'
-
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "placeholder-project-id"
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production"
+import { sanityDataset, sanityProjectId } from './env'
 
 export default defineConfig({
+  name: 'default',
+  title: 'Livre Studio',
   basePath: '/studio',
-  projectId,
-  dataset,
+  projectId: sanityProjectId,
+  dataset: sanityDataset,
   schema: {
     types: schemaTypes,
   },
   plugins: [
+    structureTool(),
     esESLocale(),
   ],
 })

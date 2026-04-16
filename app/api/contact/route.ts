@@ -1,5 +1,10 @@
 import { NextResponse } from "next/server"
 import { client } from "@/sanity/client"
+import { sanityApiToken } from "@/sanity/serverEnv"
+
+const writeClient = client.withConfig({
+  token: sanityApiToken,
+})
 
 export async function POST(req: Request) {
   try {
@@ -12,20 +17,6 @@ export async function POST(req: Request) {
         { status: 400 }
       )
     }
-
-    // In a real application, ensure you use a client configured with a token
-    // that has write access to the dataset (e.g. process.env.SANITY_API_TOKEN)
-    // For this boilerplate logic, we rely on the client instance but will likely
-    // fail unless the client is authenticated with a token.
-    const sanityToken = process.env.SANITY_API_TOKEN
-
-    if (!sanityToken) {
-       console.warn("SANITY_API_TOKEN is not set. The form submission to Sanity might fail if the dataset is not public for writes.")
-    }
-
-    const writeClient = client.withConfig({
-      token: sanityToken,
-    })
 
     const newLead = await writeClient.create({
       _type: "lead",
