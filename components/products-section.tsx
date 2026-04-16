@@ -13,37 +13,37 @@ export function ProductsSection() {
       title: t.products.categories.bombones.title,
       description: t.products.categories.bombones.desc,
       image: "/images/bombones.jpg",
-      href: "#",
+      href: "/products",
     },
     {
       title: t.products.categories.chocotejas.title,
       description: t.products.categories.chocotejas.desc,
       image: "/images/chocotejas.jpg",
-      href: "#",
+      href: "/products",
     },
     {
       title: t.products.categories.barras.title,
       description: t.products.categories.barras.desc,
       image: "/images/barras.jpg",
-      href: "#",
+      href: "/products",
     },
     {
       title: t.products.categories.grageas.title,
       description: t.products.categories.grageas.desc,
       image: "/images/grageas.jpg",
-      href: "#",
+      href: "/products",
     },
     {
       title: t.products.categories.vegano.title,
       description: t.products.categories.vegano.desc,
       image: "/images/vegano.jpg",
-      href: "#",
+      href: "/products",
     },
     {
       title: t.products.categories.delicatessen.title,
       description: t.products.categories.delicatessen.desc,
       image: "/images/delicatessen.jpg",
-      href: "#",
+      href: "/products",
     },
   ]
 

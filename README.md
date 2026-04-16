@@ -12,6 +12,16 @@ This repository is linked to a [v0](https://v0.app) project. You can continue de
 
 This repo uses `pnpm`.
 
+## Environment variables
+
+Set these in Vercel (Project → Settings → Environment Variables) and in local development.
+
+- `NEXT_PUBLIC_SANITY_PROJECT_ID`
+- `NEXT_PUBLIC_SANITY_DATASET`
+- `NEXT_PUBLIC_SANITY_API_VERSION`
+- `SANITY_API_TOKEN` (required for `POST /api/contact`)
+- `NEXT_PUBLIC_WHATSAPP_NUMBER` (E.164 format recommended, e.g. `+51999111222`)
+
 First, install dependencies and run the development server:
 
 ```bash
