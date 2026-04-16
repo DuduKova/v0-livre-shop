@@ -1,56 +1,61 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
-
-const categories = [
-  {
-    title: "Bombones y Trufas",
-    description: "Rellenos cremosos envueltos en el mas fino chocolate",
-    image: "/images/bombones.jpg",
-    href: "#",
-  },
-  {
-    title: "Chocotejas Peruanas",
-    description: "Tradicion peruana con manjar blanco y pecanas",
-    image: "/images/chocotejas.jpg",
-    href: "#",
-  },
-  {
-    title: "Barras y Tabletas",
-    description: "Chocolate puro en diferentes porcentajes de cacao",
-    image: "/images/barras.jpg",
-    href: "#",
-  },
-  {
-    title: "Grageas y Banados",
-    description: "Frutos y semillas cubiertas de chocolate premium",
-    image: "/images/grageas.jpg",
-    href: "#",
-  },
-  {
-    title: "Vegano",
-    description: "Chocolate plant-based sin lacteos ni derivados",
-    image: "/images/vegano.jpg",
-    href: "#",
-  },
-  {
-    title: "Delicatessen",
-    description: "Seleccion gourmet para paladares exigentes",
-    image: "/images/delicatessen.jpg",
-    href: "#",
-  },
-]
+import { useLanguage } from "@/context/LanguageContext"
 
 export function ProductsSection() {
+  const { t } = useLanguage()
+
+  const categories = [
+    {
+      title: t.products.categories.bombones.title,
+      description: t.products.categories.bombones.desc,
+      image: "/images/bombones.jpg",
+      href: "#",
+    },
+    {
+      title: t.products.categories.chocotejas.title,
+      description: t.products.categories.chocotejas.desc,
+      image: "/images/chocotejas.jpg",
+      href: "#",
+    },
+    {
+      title: t.products.categories.barras.title,
+      description: t.products.categories.barras.desc,
+      image: "/images/barras.jpg",
+      href: "#",
+    },
+    {
+      title: t.products.categories.grageas.title,
+      description: t.products.categories.grageas.desc,
+      image: "/images/grageas.jpg",
+      href: "#",
+    },
+    {
+      title: t.products.categories.vegano.title,
+      description: t.products.categories.vegano.desc,
+      image: "/images/vegano.jpg",
+      href: "#",
+    },
+    {
+      title: t.products.categories.delicatessen.title,
+      description: t.products.categories.delicatessen.desc,
+      image: "/images/delicatessen.jpg",
+      href: "#",
+    },
+  ]
+
   return (
     <section id="productos" className="py-24 md:py-32">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center mb-16">
           <p className="text-primary tracking-[0.4em] text-xs uppercase mb-6">
-            Coleccion
+            {t.products.tag}
           </p>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-foreground mb-8 text-balance">
-            Nuestros Productos
+            {t.products.title}
           </h2>
           <div className="w-16 h-px bg-primary mx-auto" />
         </div>
@@ -77,7 +82,7 @@ export function ProductsSection() {
                   {category.description}
                 </p>
                 <span className="inline-flex items-center gap-2 text-primary text-sm tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Explorar <ArrowRight className="w-4 h-4" />
+                  {t.products.explore} <ArrowRight className="w-4 h-4" />
                 </span>
               </div>
             </Link>
