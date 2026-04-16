@@ -12,4 +12,7 @@ const requiredServerEnv = (name: "SANITY_API_TOKEN") => {
   return value
 }
 
-export const sanityApiToken = requiredServerEnv("SANITY_API_TOKEN")
+// Do not throw at import-time; Next may evaluate modules during build.
+export function requireSanityApiToken() {
+  return requiredServerEnv("SANITY_API_TOKEN")
+}

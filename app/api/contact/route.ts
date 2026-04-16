@@ -1,13 +1,13 @@
 import { NextResponse } from "next/server"
-import { client } from "@/sanity/client"
-import { sanityApiToken } from "@/sanity/serverEnv"
-
-const writeClient = client.withConfig({
-  token: sanityApiToken,
-})
+import { getSanityClient } from "@/sanity/client"
+import { requireSanityApiToken } from "@/sanity/serverEnv"
 
 export async function POST(req: Request) {
   try {
+    const writeClient = getSanityClient().withConfig({
+      token: requireSanityApiToken(),
+    })
+
     const body = await req.json()
     const { name, email, phone, message } = body
 
