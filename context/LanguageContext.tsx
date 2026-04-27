@@ -41,6 +41,13 @@ type Translations = {
       p2: string
       imageAlt: string
     }
+    ourCommunity: {
+      tag: string
+      title: string
+      p1: string
+      p2: string
+      imageAlt: string
+    }
     values: {
       tag: string
       title: string
@@ -141,6 +148,14 @@ const translations: Translations = {
       imageAlt:
         "Ilustracion en acuarela: paisaje peruano con montanas, tren, llama y ambiente de Cusco, en tonos tierra y bordes suaves.",
     },
+    ourCommunity: {
+      tag: "Nuestra comunidad",
+      title: "Gente, cacao y celebración",
+      p1: "Nuestro chocolate se teje con la vida de quienes cultivan el cacao, cuidan la tierra y mantienen vivas las tradiciones andinas. Trabajamos cerca de pequeños productores, con comercio justo y respeto mutuo.",
+      p2: "Cada bocado es un homenaje a esa red: hojas de cacao, fiestas y oficios que hacen del Peru un hogar de sabor e identidad.",
+      imageAlt:
+        "Ilustracion: hojas y frutos de cacao, personas con vestimenta tradicional peruana en actitud festiva, fondo claro beis.",
+    },
     values: {
       tag: "Nuestros Valores",
       title: "Compromiso con la excelencia",
@@ -237,6 +252,14 @@ const translations: Translations = {
       p2: "Our roots are not just a point on a map: they are climate, history, community, and ritual. Every piece of chocolate carries a fragment of this landscape and of those who grow it with effort and pride.",
       imageAlt:
         "Watercolor illustration: Peruvian landscape with mountains, train, llama, and a Cusco-inspired atmosphere in earthy tones with soft edges.",
+    },
+    ourCommunity: {
+      tag: "Our community",
+      title: "People, cacao, and celebration",
+      p1: "Our chocolate is woven from the lives of those who grow cacao, care for the land, and keep Andean traditions alive. We work closely with small producers, through fair trade and mutual respect.",
+      p2: "Every bite honors that network: cacao leaves, gatherings, and crafts that make Peru a home of flavor and identity.",
+      imageAlt:
+        "Illustration: cacao leaves and pods, people in traditional Peruvian dress in a festive scene, on a light beige background.",
     },
     values: {
       tag: "Our Values",
