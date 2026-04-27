@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { MapPin, Phone } from "lucide-react"
 import { useLanguage } from "@/context/LanguageContext"
+import { LivreLogo } from "@/components/brand/livre-logo"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -14,9 +15,9 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-12 md:gap-8 mb-12">
           {/* Brand */}
           <div>
-            <Link href="/" className="inline-block mb-6">
-              <span className="font-serif text-3xl tracking-wide text-primary">LIVRE</span>
-            </Link>
+            <div className="mb-6">
+              <LivreLogo size="lg" showTagline />
+            </div>
             <p className="text-muted-foreground leading-relaxed mb-6">
               {t.footer.desc}
             </p>

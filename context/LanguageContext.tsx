@@ -6,6 +6,10 @@ type Language = "es" | "en"
 
 type Translations = {
   [key in Language]: {
+    brand: {
+      tagline: string
+      logoAlt: string
+    }
     nav: {
       story: string
       products: string
@@ -93,6 +97,11 @@ type Translations = {
 
 const translations: Translations = {
   es: {
+    brand: {
+      tagline: "Cacao Fino Peruano",
+      logoAlt:
+        "Logotipo Livre: letra R estilizada con hoja y grano de cacao en el interior.",
+    },
     nav: {
       story: "Nuestra Historia",
       products: "Productos",
@@ -111,7 +120,7 @@ const translations: Translations = {
     story: {
       tag: "Nuestra Historia",
       title: "Del grano a la barra",
-      p1: "Livre premium chocolate nace en el majestuoso valle sagrado de los incas, una tierra de historia energía y riqueza natural incomparable. Bajo la filosofía “bean to bar” transformamos cuidadosamente el cacao desde el grano hasta la obra final.",
+      p1: "Livre Cacao Fino Peruano nace en el majestuoso valle sagrado de los incas, una tierra de historia energía y riqueza natural incomparable. Bajo la filosofía “bean to bar” transformamos cuidadosamente el cacao desde el grano hasta la obra final.",
       p2: "Somos herederos de una cultura ancestral donde el cacao no solo se cultiva… se honra.",
       p3: "Seleccionamos el cacao más fino del mundo y lo fusionamos con frutas, hierbas y superalimentos de origen peruano como la quinua,lúcuma,camu camu creando chocolates que conectan con la tierra, la historia y los sentidos.",
       p4: "Elaboramos bombones, trufas y chocolates con frutos secos, liofilizados cuidando cada detalle para transformar ingredientes nobles en experiencias únicas, llenas de identidad y sofisticación.",
@@ -168,15 +177,20 @@ const translations: Translations = {
       }
     },
     footer: {
-      desc: "Chocolate artesanal premium desde el corazon del Valle Sagrado del Peru.",
+      desc: "Cacao fino peruano y chocolate artesanal premium desde el corazón del Valle Sagrado del Perú.",
       navTitle: "Navegacion",
       contactTitle: "Contacto",
       location: "Tarabamba, Valle Sagrado",
-      rights: "Livre Premium Chocolate. Todos los derechos reservados.",
+      rights: "Livre Cacao Fino Peruano. Todos los derechos reservados.",
       madeWithLove: "Hecho con amor en el Valle Sagrado",
     }
   },
   en: {
+    brand: {
+      tagline: "Peruvian Fine Cacao",
+      logoAlt:
+        "Livre logo: stylized letter R with a leaf and cacao pod in the counter.",
+    },
     nav: {
       story: "Our Story",
       products: "Products",
@@ -195,7 +209,7 @@ const translations: Translations = {
     story: {
       tag: "Our Story",
       title: "From bean to bar",
-      p1: "Livre premium chocolate is born in the majestic Sacred Valley of the Incas, a land of incomparable history, energy, and natural wealth. Under the 'bean to bar' philosophy, we carefully transform cacao from the bean to the final masterpiece.",
+      p1: "Livre Cacao Fino Peruano is born in the majestic Sacred Valley of the Incas, a land of incomparable history, energy, and natural wealth. Under the 'bean to bar' philosophy, we carefully transform cacao from the bean to the final masterpiece.",
       p2: "We are heirs to an ancestral culture where cacao is not only cultivated... it is honored.",
       p3: "We select the finest cacao in the world and fuse it with fruits, herbs, and superfoods of Peruvian origin like quinoa, lucuma, and camu camu, creating chocolates that connect with the land, history, and the senses.",
       p4: "We make bonbons, truffles, and chocolates with nuts, freeze-dried fruits, taking care of every detail to transform noble ingredients into unique experiences, full of identity and sophistication.",
@@ -252,11 +266,11 @@ const translations: Translations = {
       }
     },
     footer: {
-      desc: "Premium artisanal chocolate from the heart of the Sacred Valley of Peru.",
+      desc: "Peruvian fine cacao and premium artisanal chocolate from the heart of the Sacred Valley of Peru.",
       navTitle: "Navigation",
       contactTitle: "Contact",
       location: "Tarabamba, Sacred Valley",
-      rights: "Livre Premium Chocolate. All rights reserved.",
+      rights: "Livre Cacao Fino Peruano. All rights reserved.",
       madeWithLove: "Made with love in the Sacred Valley",
     }
   }
