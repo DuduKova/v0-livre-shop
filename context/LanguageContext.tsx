@@ -34,6 +34,13 @@ type Translations = {
       p4: string
       p5: string
     }
+    ourRoots: {
+      tag: string
+      title: string
+      p1: string
+      p2: string
+      imageAlt: string
+    }
     values: {
       tag: string
       title: string
@@ -126,6 +133,14 @@ const translations: Translations = {
       p4: "Elaboramos bombones, trufas y chocolates con frutos secos, liofilizados cuidando cada detalle para transformar ingredientes nobles en experiencias únicas, llenas de identidad y sofisticación.",
       p5: "Cada creación nace del respeto: al origen, a los procesos y a las manos que lo hacen posible. Trabajamos bajo principios de comercio justo, de la mano de pequeños agricultores y productores locales, construyendo juntos un camino sostenible, auténtico y lleno de propósito. Más que chocolate, creamos experiencias que celebran nuestras raíces, elevan el sabor y cuentan una historia en cada bocado.",
     },
+    ourRoots: {
+      tag: "Nuestras raices",
+      title: "Paisaje que nos inspira",
+      p1: "Esta acuarela evoca el Peru que amamos: montanas andinas, un tren que atraviesa el valle, la calidez de Cusco y la presencia serena de una llama, simbolo del altiplano. Tonos tierra y bordes suaves reflejan la misma sensibilidad con la que trabajamos el cacao: con paciencia, respeto y mirada artesanal.",
+      p2: "Nuestras raices no son solo un lugar en el mapa: son clima, historia, comunidad y ritual. Cada pieza de chocolate lleva un pedacito de este paisaje y de quienes lo cultivan con esfuerzo y orgullo.",
+      imageAlt:
+        "Ilustracion en acuarela: paisaje peruano con montanas, tren, llama y ambiente de Cusco, en tonos tierra y bordes suaves.",
+    },
     values: {
       tag: "Nuestros Valores",
       title: "Compromiso con la excelencia",
@@ -214,6 +229,14 @@ const translations: Translations = {
       p3: "We select the finest cacao in the world and fuse it with fruits, herbs, and superfoods of Peruvian origin like quinoa, lucuma, and camu camu, creating chocolates that connect with the land, history, and the senses.",
       p4: "We make bonbons, truffles, and chocolates with nuts, freeze-dried fruits, taking care of every detail to transform noble ingredients into unique experiences, full of identity and sophistication.",
       p5: "Every creation is born from respect: for the origin, the processes, and the hands that make it possible. We work under fair trade principles, hand in hand with small farmers and local producers, building together a sustainable, authentic path full of purpose. More than chocolate, we create experiences that celebrate our roots, elevate the flavor, and tell a story in every bite.",
+    },
+    ourRoots: {
+      tag: "Our roots",
+      title: "The landscape that inspires us",
+      p1: "This watercolor evokes the Peru we love: Andean mountains, a train crossing the valley, the warmth of Cusco, and the calm presence of a llama, a symbol of the highlands. Earthy tones and soft edges reflect the same sensitivity we bring to cacao: patience, respect, and an artisan eye.",
+      p2: "Our roots are not just a point on a map: they are climate, history, community, and ritual. Every piece of chocolate carries a fragment of this landscape and of those who grow it with effort and pride.",
+      imageAlt:
+        "Watercolor illustration: Peruvian landscape with mountains, train, llama, and a Cusco-inspired atmosphere in earthy tones with soft edges.",
     },
     values: {
       tag: "Our Values",
