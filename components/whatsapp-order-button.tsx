@@ -3,12 +3,10 @@ import Link from "next/link"
 import { buildWhatsAppOrderLink } from "@/lib/whatsapp"
 
 export function WhatsAppOrderButton(props: { productName: string; className?: string }) {
-  const phone = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER
-
-  if (!phone) return null
+  const phoneE164 = "+51967334686"
 
   const href = buildWhatsAppOrderLink({
-    phoneE164: phone,
+    phoneE164,
     productName: props.productName,
   })
 
