@@ -6,6 +6,10 @@ type Language = "es" | "en"
 
 type Translations = {
   [key in Language]: {
+    brand: {
+      tagline: string
+      logoAlt: string
+    }
     nav: {
       story: string
       products: string
@@ -29,6 +33,20 @@ type Translations = {
       p3: string
       p4: string
       p5: string
+    }
+    ourRoots: {
+      tag: string
+      title: string
+      p1: string
+      p2: string
+      imageAlt: string
+    }
+    ourCommunity: {
+      tag: string
+      title: string
+      p1: string
+      p2: string
+      imageAlt: string
     }
     values: {
       tag: string
@@ -93,6 +111,11 @@ type Translations = {
 
 const translations: Translations = {
   es: {
+    brand: {
+      tagline: "Cacao Fino Peruano",
+      logoAlt:
+        "Logotipo Livre: letra R estilizada con hoja y grano de cacao en el interior.",
+    },
     nav: {
       story: "Nuestra Historia",
       products: "Productos",
@@ -111,11 +134,27 @@ const translations: Translations = {
     story: {
       tag: "Nuestra Historia",
       title: "Del grano a la barra",
-      p1: "Livre premium chocolate nace en el majestuoso valle sagrado de los incas, una tierra de historia energía y riqueza natural incomparable. Bajo la filosofía “bean to bar” transformamos cuidadosamente el cacao desde el grano hasta la obra final.",
+      p1: "Livre Cacao Fino Peruano nace en el majestuoso valle sagrado de los incas, una tierra de historia energía y riqueza natural incomparable. Bajo la filosofía “bean to bar” transformamos cuidadosamente el cacao desde el grano hasta la obra final.",
       p2: "Somos herederos de una cultura ancestral donde el cacao no solo se cultiva… se honra.",
       p3: "Seleccionamos el cacao más fino del mundo y lo fusionamos con frutas, hierbas y superalimentos de origen peruano como la quinua,lúcuma,camu camu creando chocolates que conectan con la tierra, la historia y los sentidos.",
       p4: "Elaboramos bombones, trufas y chocolates con frutos secos, liofilizados cuidando cada detalle para transformar ingredientes nobles en experiencias únicas, llenas de identidad y sofisticación.",
       p5: "Cada creación nace del respeto: al origen, a los procesos y a las manos que lo hacen posible. Trabajamos bajo principios de comercio justo, de la mano de pequeños agricultores y productores locales, construyendo juntos un camino sostenible, auténtico y lleno de propósito. Más que chocolate, creamos experiencias que celebran nuestras raíces, elevan el sabor y cuentan una historia en cada bocado.",
+    },
+    ourRoots: {
+      tag: "Nuestras raices",
+      title: "Paisaje que nos inspira",
+      p1: "Esta acuarela evoca el Peru que amamos: montanas andinas, un tren que atraviesa el valle, la calidez de Cusco y la presencia serena de una llama, simbolo del altiplano. Tonos tierra y bordes suaves reflejan la misma sensibilidad con la que trabajamos el cacao: con paciencia, respeto y mirada artesanal.",
+      p2: "Nuestras raices no son solo un lugar en el mapa: son clima, historia, comunidad y ritual. Cada pieza de chocolate lleva un pedacito de este paisaje y de quienes lo cultivan con esfuerzo y orgullo.",
+      imageAlt:
+        "Ilustracion en acuarela: paisaje peruano con montanas, tren, llama y ambiente de Cusco, en tonos tierra y bordes suaves.",
+    },
+    ourCommunity: {
+      tag: "Nuestra comunidad",
+      title: "Gente, cacao y celebración",
+      p1: "Nuestro chocolate se teje con la vida de quienes cultivan el cacao, cuidan la tierra y mantienen vivas las tradiciones andinas. Trabajamos cerca de pequeños productores, con comercio justo y respeto mutuo.",
+      p2: "Cada bocado es un homenaje a esa red: hojas de cacao, fiestas y oficios que hacen del Peru un hogar de sabor e identidad.",
+      imageAlt:
+        "Ilustracion: hojas y frutos de cacao, personas con vestimenta tradicional peruana en actitud festiva, fondo claro beis.",
     },
     values: {
       tag: "Nuestros Valores",
@@ -168,15 +207,20 @@ const translations: Translations = {
       }
     },
     footer: {
-      desc: "Chocolate artesanal premium desde el corazon del Valle Sagrado del Peru.",
+      desc: "Cacao fino peruano y chocolate artesanal premium desde el corazón del Valle Sagrado del Perú.",
       navTitle: "Navegacion",
       contactTitle: "Contacto",
       location: "Tarabamba, Valle Sagrado",
-      rights: "Livre Premium Chocolate. Todos los derechos reservados.",
+      rights: "Livre Cacao Fino Peruano. Todos los derechos reservados.",
       madeWithLove: "Hecho con amor en el Valle Sagrado",
     }
   },
   en: {
+    brand: {
+      tagline: "Peruvian Fine Cacao",
+      logoAlt:
+        "Livre logo: stylized letter R with a leaf and cacao pod in the counter.",
+    },
     nav: {
       story: "Our Story",
       products: "Products",
@@ -195,11 +239,27 @@ const translations: Translations = {
     story: {
       tag: "Our Story",
       title: "From bean to bar",
-      p1: "Livre premium chocolate is born in the majestic Sacred Valley of the Incas, a land of incomparable history, energy, and natural wealth. Under the 'bean to bar' philosophy, we carefully transform cacao from the bean to the final masterpiece.",
+      p1: "Livre Cacao Fino Peruano is born in the majestic Sacred Valley of the Incas, a land of incomparable history, energy, and natural wealth. Under the 'bean to bar' philosophy, we carefully transform cacao from the bean to the final masterpiece.",
       p2: "We are heirs to an ancestral culture where cacao is not only cultivated... it is honored.",
       p3: "We select the finest cacao in the world and fuse it with fruits, herbs, and superfoods of Peruvian origin like quinoa, lucuma, and camu camu, creating chocolates that connect with the land, history, and the senses.",
       p4: "We make bonbons, truffles, and chocolates with nuts, freeze-dried fruits, taking care of every detail to transform noble ingredients into unique experiences, full of identity and sophistication.",
       p5: "Every creation is born from respect: for the origin, the processes, and the hands that make it possible. We work under fair trade principles, hand in hand with small farmers and local producers, building together a sustainable, authentic path full of purpose. More than chocolate, we create experiences that celebrate our roots, elevate the flavor, and tell a story in every bite.",
+    },
+    ourRoots: {
+      tag: "Our roots",
+      title: "The landscape that inspires us",
+      p1: "This watercolor evokes the Peru we love: Andean mountains, a train crossing the valley, the warmth of Cusco, and the calm presence of a llama, a symbol of the highlands. Earthy tones and soft edges reflect the same sensitivity we bring to cacao: patience, respect, and an artisan eye.",
+      p2: "Our roots are not just a point on a map: they are climate, history, community, and ritual. Every piece of chocolate carries a fragment of this landscape and of those who grow it with effort and pride.",
+      imageAlt:
+        "Watercolor illustration: Peruvian landscape with mountains, train, llama, and a Cusco-inspired atmosphere in earthy tones with soft edges.",
+    },
+    ourCommunity: {
+      tag: "Our community",
+      title: "People, cacao, and celebration",
+      p1: "Our chocolate is woven from the lives of those who grow cacao, care for the land, and keep Andean traditions alive. We work closely with small producers, through fair trade and mutual respect.",
+      p2: "Every bite honors that network: cacao leaves, gatherings, and crafts that make Peru a home of flavor and identity.",
+      imageAlt:
+        "Illustration: cacao leaves and pods, people in traditional Peruvian dress in a festive scene, on a light beige background.",
     },
     values: {
       tag: "Our Values",
@@ -252,11 +312,11 @@ const translations: Translations = {
       }
     },
     footer: {
-      desc: "Premium artisanal chocolate from the heart of the Sacred Valley of Peru.",
+      desc: "Peruvian fine cacao and premium artisanal chocolate from the heart of the Sacred Valley of Peru.",
       navTitle: "Navigation",
       contactTitle: "Contact",
       location: "Tarabamba, Sacred Valley",
-      rights: "Livre Premium Chocolate. All rights reserved.",
+      rights: "Livre Cacao Fino Peruano. All rights reserved.",
       madeWithLove: "Made with love in the Sacred Valley",
     }
   }

@@ -3,81 +3,86 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Brand book: Vino, Rojo Cacao, Marrón, Dorado. Lumina → Cormorant in layout. */
 :root {
-  /* Dark chocolate & gold luxury theme */
-  --background: oklch(0.12 0.02 50);
-  --foreground: oklch(0.95 0.01 85);
-  --card: oklch(0.15 0.02 50);
-  --card-foreground: oklch(0.95 0.01 85);
-  --popover: oklch(0.15 0.02 50);
-  --popover-foreground: oklch(0.95 0.01 85);
-  --primary: oklch(0.75 0.12 85);
-  --primary-foreground: oklch(0.12 0.02 50);
-  --secondary: oklch(0.22 0.03 50);
-  --secondary-foreground: oklch(0.90 0.02 85);
-  --muted: oklch(0.20 0.02 50);
-  --muted-foreground: oklch(0.65 0.02 85);
-  --accent: oklch(0.75 0.12 85);
-  --accent-foreground: oklch(0.12 0.02 50);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.28 0.03 50);
-  --input: oklch(0.18 0.02 50);
-  --ring: oklch(0.75 0.12 85);
-  --chart-1: oklch(0.75 0.12 85);
-  --chart-2: oklch(0.45 0.08 50);
-  --chart-3: oklch(0.35 0.06 50);
-  --chart-4: oklch(0.55 0.10 60);
-  --chart-5: oklch(0.65 0.11 75);
+  --brand-vino: #691934;
+  --brand-rojo-cacao: #a30a3d;
+  --brand-marron-cacao: #573c2d;
+  --brand-dorado: #afa261;
+
+  --background: #120b0d;
+  --foreground: #f4ede4;
+  --card: #1a1316;
+  --card-foreground: #f4ede4;
+  --popover: #1a1316;
+  --popover-foreground: #f4ede4;
+  --primary: #afa261;
+  --primary-foreground: #120b0d;
+  --secondary: #2a2024;
+  --secondary-foreground: #f0e8e0;
+  --muted: #231a1e;
+  --muted-foreground: #a89896;
+  --accent: #3d2a32;
+  --accent-foreground: #f4ede4;
+  --destructive: #a30a3d;
+  --destructive-foreground: #f4ede4;
+  --border: #3a2a30;
+  --input: #2a2024;
+  --ring: #afa261;
+  --chart-1: #afa261;
+  --chart-2: #691934;
+  --chart-3: #573c2d;
+  --chart-4: #a30a3d;
+  --chart-5: #7a5c50;
   --radius: 0.5rem;
-  --sidebar: oklch(0.10 0.02 50);
-  --sidebar-foreground: oklch(0.95 0.01 85);
-  --sidebar-primary: oklch(0.75 0.12 85);
-  --sidebar-primary-foreground: oklch(0.12 0.02 50);
-  --sidebar-accent: oklch(0.22 0.03 50);
-  --sidebar-accent-foreground: oklch(0.95 0.01 85);
-  --sidebar-border: oklch(0.28 0.03 50);
-  --sidebar-ring: oklch(0.75 0.12 85);
+  --sidebar: #0f0a0c;
+  --sidebar-foreground: #f4ede4;
+  --sidebar-primary: #afa261;
+  --sidebar-primary-foreground: #120b0d;
+  --sidebar-accent: #2a2024;
+  --sidebar-accent-foreground: #f0e8e0;
+  --sidebar-border: #3a2a30;
+  --sidebar-ring: #afa261;
 }
 
 .dark {
-  --background: oklch(0.12 0.02 50);
-  --foreground: oklch(0.95 0.01 85);
-  --card: oklch(0.15 0.02 50);
-  --card-foreground: oklch(0.95 0.01 85);
-  --popover: oklch(0.15 0.02 50);
-  --popover-foreground: oklch(0.95 0.01 85);
-  --primary: oklch(0.75 0.12 85);
-  --primary-foreground: oklch(0.12 0.02 50);
-  --secondary: oklch(0.22 0.03 50);
-  --secondary-foreground: oklch(0.90 0.02 85);
-  --muted: oklch(0.20 0.02 50);
-  --muted-foreground: oklch(0.65 0.02 85);
-  --accent: oklch(0.75 0.12 85);
-  --accent-foreground: oklch(0.12 0.02 50);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.28 0.03 50);
-  --input: oklch(0.18 0.02 50);
-  --ring: oklch(0.75 0.12 85);
-  --chart-1: oklch(0.75 0.12 85);
-  --chart-2: oklch(0.45 0.08 50);
-  --chart-3: oklch(0.35 0.06 50);
-  --chart-4: oklch(0.55 0.10 60);
-  --chart-5: oklch(0.65 0.11 75);
-  --sidebar: oklch(0.10 0.02 50);
-  --sidebar-foreground: oklch(0.95 0.01 85);
-  --sidebar-primary: oklch(0.75 0.12 85);
-  --sidebar-primary-foreground: oklch(0.12 0.02 50);
-  --sidebar-accent: oklch(0.22 0.03 50);
-  --sidebar-accent-foreground: oklch(0.95 0.01 85);
-  --sidebar-border: oklch(0.28 0.03 50);
-  --sidebar-ring: oklch(0.75 0.12 85);
+  --background: #120b0d;
+  --foreground: #f4ede4;
+  --card: #1a1316;
+  --card-foreground: #f4ede4;
+  --popover: #1a1316;
+  --popover-foreground: #f4ede4;
+  --primary: #afa261;
+  --primary-foreground: #120b0d;
+  --secondary: #2a2024;
+  --secondary-foreground: #f0e8e0;
+  --muted: #231a1e;
+  --muted-foreground: #a89896;
+  --accent: #3d2a32;
+  --accent-foreground: #f4ede4;
+  --destructive: #a30a3d;
+  --destructive-foreground: #f4ede4;
+  --border: #3a2a30;
+  --input: #2a2024;
+  --ring: #afa261;
+  --chart-1: #afa261;
+  --chart-2: #691934;
+  --chart-3: #573c2d;
+  --chart-4: #a30a3d;
+  --chart-5: #7a5c50;
+  --sidebar: #0f0a0c;
+  --sidebar-foreground: #f4ede4;
+  --sidebar-primary: #afa261;
+  --sidebar-primary-foreground: #120b0d;
+  --sidebar-accent: #2a2024;
+  --sidebar-accent-foreground: #f0e8e0;
+  --sidebar-border: #3a2a30;
+  --sidebar-ring: #afa261;
 }
 
 @theme inline {
   --font-sans: 'Inter', 'Inter Fallback', sans-serif;
-  --font-serif: 'Playfair Display', 'Playfair Display Fallback', serif;
+  --font-serif: var(--font-cormorant), 'Cormorant', Georgia, serif;
   --font-mono: 'Geist Mono', 'Geist Mono Fallback', monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -115,6 +120,10 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-brand-vino: var(--brand-vino);
+  --color-brand-rojo: var(--brand-rojo-cacao);
+  --color-brand-marron: var(--brand-marron-cacao);
+  --color-brand-dorado: var(--brand-dorado);
 }
 
 @layer base {
@@ -126,20 +135,19 @@
   }
 }
 
-/* Custom scrollbar for luxury feel */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: oklch(0.12 0.02 50);
+  background: var(--background);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: oklch(0.28 0.03 50);
+  background: var(--brand-marron-cacao);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: oklch(0.35 0.04 50);
+  background: color-mix(in srgb, var(--brand-vino) 80%, #fff 20%);
 }

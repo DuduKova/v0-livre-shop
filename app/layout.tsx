@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Playfair_Display } from 'next/font/google'
+import { Cormorant, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { LanguageProvider } from "@/context/LanguageContext"
 import './globals.css'
@@ -9,14 +9,16 @@ const inter = Inter({
   variable: '--font-inter',
 });
 
-const playfair = Playfair_Display({ 
-  subsets: ["latin"],
-  variable: '--font-playfair',
+/** Web alternative to the brand book’s Lumina — swap for licensed Lumina files if provided. */
+const cormorant = Cormorant({
+  subsets: ['latin'],
+  variable: '--font-cormorant',
+  weight: ['400', '500', '600', '700'],
 });
 
 export const metadata: Metadata = {
-  title: 'Livre Premium Chocolate | Bean to Bar desde el Valle Sagrado',
-  description: 'Chocolate artesanal premium del Valle Sagrado del Perú. Experimenta el alma de los Andes con nuestro cacao fino de aroma y superalimentos peruanos.',
+  title: 'Livre Cacao Fino Peruano | Bean to Bar — Valle Sagrado',
+  description: 'Cacao fino peruano y chocolate artesanal del Valle Sagrado. Bean to bar con alma, tradición e ingredientes peruanos.',
   keywords: ['chocolate peruano', 'bean to bar', 'Valle Sagrado', 'cacao fino', 'chocolate premium', 'chocolate artesanal'],
   generator: 'v0.app',
   icons: {
@@ -44,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" className={`${inter.variable} ${playfair.variable} bg-background`}>
+    <html lang="es" className={`${inter.variable} ${cormorant.variable} bg-background`}>
       <body className="font-sans antialiased">
         <LanguageProvider>
           {children}

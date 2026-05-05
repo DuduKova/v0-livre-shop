@@ -5,6 +5,7 @@ import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useLanguage } from "@/context/LanguageContext"
+import { LivreLogo } from "@/components/brand/livre-logo"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -19,10 +20,12 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
       <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="font-serif text-2xl tracking-wide text-primary">LIVRE</span>
-          <span className="hidden sm:inline-block text-xs tracking-[0.3em] text-muted-foreground uppercase">Premium Chocolate</span>
-        </Link>
+        <LivreLogo
+          size="md"
+          showTagline
+          taglineClassName="hidden sm:block"
+          priority
+        />
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
